@@ -1,0 +1,12 @@
+{
+  "title": "CSS Objectnet",
+  "name": "css-objectnet",
+  "version": "0.0.1",
+  "description": "Analyze the ID-Class relations of HTML nodes",
+  "main": "index.js",
+  "author": "Martin Giger (http://humanoids.be)",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT"
+}
