@@ -1,2 +1,4 @@
 .*
 *.md
+*doc*
+node_modules/jpm*
