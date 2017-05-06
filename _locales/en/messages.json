@@ -1,0 +1,10 @@
+{
+    "name": {
+        "message": "CSS Objectnet",
+        "description": "Extension title and panel title"
+    },
+    "description": {
+        "message": "CSS Class-ID releation network",
+        "description": "Extension description"
+    }
+}

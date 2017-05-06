@@ -1,0 +1,7 @@
+node_modules
+webextension/devtools
+webextension/background
+webextension/assets/images
+webextension/_locales
+webextension/vendor
+web-ext-artifacts

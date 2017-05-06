@@ -1,0 +1,26 @@
+{
+    "applications": {
+        "gecko": {
+            "strict_min_version": "54.0"
+        }
+    },
+    "manifest_version": 2,
+    "background": {
+        "scripts": [ "background/index.js" ]
+    },
+    "devtools_page": "devtools/page/index.html",
+    "default_locale": "en",
+    "description": "__MSG_description__",
+    "name": "__MSG_name__",
+    "permissions": [
+        "<all_urls>",
+        "tabs"
+    ],
+    "version": "1.0.0",
+    "icons": {
+        "16": "assets/images/icon-16.png",
+        "48": "assets/images/icon-48.png",
+        "64": "assets/images/icon-64.png"
+    },
+    "author": "Martin Giger"
+}

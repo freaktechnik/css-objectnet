@@ -1,12 +1,40 @@
 {
   "title": "CSS Objectnet",
   "name": "css-objectnet",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Analyze the ID-Class relations of HTML nodes",
-  "main": "index.js",
+  "main": "manifest.json",
   "author": "Martin Giger (http://humanoids.be)",
-  "engines": {
-    "firefox": ">=38.0a1"
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-freaktechnik": "^2.2.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "style-loader": "^0.17.0",
+    "web-ext": "^1.9.1",
+    "webpack": "^2.5.0",
+    "webpack-webext-plugin": "github:rpl/webpack-webext-plugin"
   },
-  "license": "MIT"
+  "dependencies": {
+    "d3": "^4.8.0"
+  },
+  "scripts": {
+    "build": "webpack && web-ext build -s webextension",
+    "lint-js": "eslint src/ webpack/",
+    "lint-ext": "webpack && web-ext lint -s webextension",
+    "lint": "npm run lint-js && npm run lint-ext",
+    "test": "npm run lint",
+    "start": "webpack && web-ext run -s webextension"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freaktechnik/css-objectnet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freaktechnik/css-objectnet/issues"
+  },
+  "homepage": "https://github.com/freaktechnik/css-objectnet"
 }
