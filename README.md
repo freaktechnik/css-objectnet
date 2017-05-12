@@ -2,3 +2,6 @@
 [![Travis CI Builds](https://travis-ci.org/freaktechnik/css-objectnet.svg)](https://travis-ci.org/freaktechnik/css-objectnet) [![Dependency CI](https://dependencyci.com/github/freaktechnik/css-objectnet/badge)](https://dependencyci.com/freaktechnik/css-objectnet)
 
 Analyze the ID-Class relations of HTML nodes
+
+## Translations
+The extension is translated via [Transifex](https://www.transifex.com/freaktechnik/css-objectnet/)
