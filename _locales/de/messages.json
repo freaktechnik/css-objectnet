@@ -1,0 +1,10 @@
+{
+    "name": {
+        "message": "CSS Objektnetzwerk",
+        "description": "Extension title and panel title"
+    },
+    "description": {
+        "message": "CSS-Klassen-ID-Verhältnissnetzwerk",
+        "description": "Extension description"
+    }
+}

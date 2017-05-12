@@ -27,7 +27,7 @@
     "lint-ext": "webpack && web-ext lint -s webextension",
     "lint": "npm run lint-js && npm run lint-ext",
     "test": "npm run lint",
-    "start": "webpack && web-ext run -s webextension"
+    "start": "webpack --hide-modules && web-ext run -s webextension"
   },
   "repository": {
     "type": "git",

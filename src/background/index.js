@@ -1,8 +1,7 @@
-import '../../data/icon-16.png';
-import '../../data/icon-48.png';
-import '../../data/icon-64.png';
+import '../../data/icon-48b.png';
 
 import '../../_locales/en/messages.json';
+import '../../_locales/de/messages.json';
 
 browser.runtime.onMessage.addListener((message) => {
     switch(message.topic) {
