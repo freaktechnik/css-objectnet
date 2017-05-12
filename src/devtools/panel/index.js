@@ -25,11 +25,9 @@ window.addEventListener("resize", () => {
     passive: true
 });
 
-browser.runtime.onMessage.addListener((message) => {
-    if(message.topic == "reload" && message.tabId == browser.devtools.inspectedWindow.tabId) {
-        gd.reset();
-        getElements();
-    }
+browser.devtools.network.onNavigated.addListener(() => {
+    gd.reset();
+    getElements();
 });
 
 getElements();
