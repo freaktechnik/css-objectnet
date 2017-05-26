@@ -3,6 +3,10 @@
 
 This is an experimental dev tool to analyze the ID-Class relations of HTML nodes.
 
+The CSS Objectnet panel in the devtools with a graph connecting HTML element IDs with their associated classes. This lets you analyze how you share your code and check classes for only having one responsibility and so on.
+
+Currently there is no interaction on click to the elements in the graph other than a force simulation on the graph.
+
 ## Translations
 The extension is translated via [Transifex](https://www.transifex.com/freaktechnik/css-objectnet/).
 
