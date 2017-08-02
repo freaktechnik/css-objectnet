@@ -83,14 +83,14 @@ export default class GraphData {
         this.generateLinks(elementsWithId, idn);
 
         const link = this.svg.selectAll(".link")
-            .data(this.links)
-            .enter()
+                .data(this.links)
+                .enter()
                 .append("line")
                 .attr("class", "link")
                 .style("stroke-width", (d) => Math.sqrt(d.value)),
             node = this.svg.selectAll(".node")
-            .data(this.nodes)
-            .enter()
+                .data(this.nodes)
+                .enter()
                 .append("g")
                 .attr("class", "node")
                 .call(d3.drag()
@@ -115,25 +115,25 @@ export default class GraphData {
                 );
 
         node.append("text")
-          .attr("dx", 2)
-          .attr("dy", ".35em")
-          .style("fill", (d) => this.color(d.group))
-          .text((d) => (d.group == this.classGroup ? '.' : '#') + d.name);
+            .attr("dx", 2)
+            .attr("dy", ".35em")
+            .style("fill", (d) => this.color(d.group))
+            .text((d) => (d.group == this.classGroup ? '.' : '#') + d.name);
 
         this.force
-          .nodes(this.nodes)
-          .on("tick", () => {
-              link
-                  .attr("x1", (d) => d.source.x)
-                  .attr("y1", (d) => d.source.y)
-                  .attr("x2", (d) => d.target.x)
-                  .attr("y2", (d) => d.target.y);
+            .nodes(this.nodes)
+            .on("tick", () => {
+                link
+                    .attr("x1", (d) => d.source.x)
+                    .attr("y1", (d) => d.source.y)
+                    .attr("x2", (d) => d.target.x)
+                    .attr("y2", (d) => d.target.y);
 
-              node.attr("transform", (d) => `translate(${d.x},${d.y})`);
-          });
+                node.attr("transform", (d) => `translate(${d.x},${d.y})`);
+            });
         this.force
-          .force("link")
-          .links(this.links);
+            .force("link")
+            .links(this.links);
 
         this.force.restart();
     }
