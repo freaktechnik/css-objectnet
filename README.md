@@ -1,4 +1,6 @@
 # ![](data/icon-48b.png) CSS Objectnet
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/freaktechnik/css-objectnet.svg)](https://greenkeeper.io/)
 [![Travis CI Builds](https://travis-ci.org/freaktechnik/css-objectnet.svg)](https://travis-ci.org/freaktechnik/css-objectnet) [![Dependency CI](https://dependencyci.com/github/freaktechnik/css-objectnet/badge)](https://dependencyci.com/freaktechnik/css-objectnet)
 
 This is an experimental dev tool to analyze the ID-Class relations of HTML nodes.
