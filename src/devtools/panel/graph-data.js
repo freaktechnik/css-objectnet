@@ -4,6 +4,14 @@
  */
 import * as d3 from 'd3';
 
+const LINK_LENGTH = 30,
+    CHARGE = 1,
+    COLLISION = 10,
+    NO_RESULT = -1,
+    ALPHA_START = 0.3,
+    ALPHA_END = 0,
+    HALF = 2;
+
 export default class GraphData {
     constructor(size) {
         this.nodes = [];
@@ -17,9 +25,9 @@ export default class GraphData {
         this.svg = d3.select("svg");
 
         this.force = d3.forceSimulation()
-            .force("link", d3.forceLink().distance(30))
-            .force("charge", d3.forceManyBody().strength(1))
-            .force("collision", d3.forceCollide(10));
+            .force("link", d3.forceLink().distance(LINK_LENGTH))
+            .force("charge", d3.forceManyBody().strength(CHARGE))
+            .force("collision", d3.forceCollide(COLLISION));
 
         this.resize(size);
     }
@@ -27,7 +35,7 @@ export default class GraphData {
     addClasses(elements) {
         for(const element of elements) {
             for(const c of element.classes) {
-                if(this.getClassIndex(c) == -1) {
+                if(this.getClassIndex(c) === NO_RESULT) {
                     this.nodes.push({
                         name: c,
                         group: this.classGroup
@@ -96,7 +104,7 @@ export default class GraphData {
                 .call(d3.drag()
                     .on("start", (d) => {
                         if(!d3.event.active) {
-                            this.force.alphaTarget(0.3).restart();
+                            this.force.alphaTarget(ALPHA_START).restart();
                         }
                         d.fx = d.x;
                         d.fy = d.y;
@@ -107,7 +115,7 @@ export default class GraphData {
                     })
                     .on("end", (d) => {
                         if(!d3.event.active) {
-                            this.force.alphaTarget(0);
+                            this.force.alphaTarget(ALPHA_END);
                         }
                         d.fx = null;
                         d.fy = null;
@@ -115,7 +123,7 @@ export default class GraphData {
                 );
 
         node.append("text")
-            .attr("dx", 2)
+            .attr("dx", "2")
             .attr("dy", ".35em")
             .style("fill", (d) => this.color(d.group))
             .text((d) => (d.group == this.classGroup ? '.' : '#') + d.name);
@@ -142,12 +150,14 @@ export default class GraphData {
         return this.nodes.findIndex((node) => node.group == this.classGroup && node.name == className);
     }
 
-    resize({ height, width }) {
+    resize({
+        height, width
+    }) {
         this.svg
             .attr("width", width)
             .attr("height", height);
 
-        this.force.force("center", d3.forceCenter(width / 2, height / 2));
+        this.force.force("center", d3.forceCenter(width / HALF, height / HALF));
     }
 
     reset() {

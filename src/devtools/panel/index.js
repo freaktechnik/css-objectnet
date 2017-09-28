@@ -10,9 +10,11 @@ const gd = new GraphData({
         browser.runtime.sendMessage({
             topic: "get-elements",
             tabId: browser.devtools.inspectedWindow.tabId
-        }).then((elements) => {
-            gd.setElements(elements);
-        });
+        })
+            .then((elements) => {
+                gd.setElements(elements);
+            })
+            .catch(console.error);
     };
 
 window.addEventListener("resize", () => {

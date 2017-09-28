@@ -1,4 +1,6 @@
-html, body, svg {
+html,
+body,
+svg {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -7,12 +9,12 @@ html, body, svg {
 }
 
 .node text {
-  font: .8em sans-serif;
-  cursor: default;
-  z-index: 18;
+    font: 0.8em sans-serif;
+    cursor: default;
+    z-index: 18;
 }
 
 .link {
-  stroke: #999;
-  stroke-opacity: .6;
+    stroke: #999;
+    stroke-opacity: 0.6;
 }

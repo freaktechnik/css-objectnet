@@ -9,7 +9,7 @@ browser.runtime.onMessage.addListener((message) => {
         return browser.tabs.executeScript(message.tabId, {
             file: "content/extract-elements.js",
             runAt: "document_end"
-        }).then((r) => r[0]);
+        }).then((r) => r.shift());
     default:
     }
 });

@@ -9,11 +9,17 @@
   "devDependencies": {
     "css-loader": "^0.28.1",
     "eslint": "^4.3.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-plugin-compat": "^1.0.4",
     "eslint-plugin-freaktechnik": "^3.0.0",
+    "eslint-plugin-import": "^2.7.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.30.1",
     "style-loader": "^0.18.2",
+    "stylelint": "^8.1.1",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-no-unsupported-browser-features": "^1.0.0",
     "web-ext": "^2.0.0",
     "webpack": "^3.4.1",
     "webpack-webext-plugin": "github:rpl/webpack-webext-plugin"
@@ -23,9 +29,10 @@
   },
   "scripts": {
     "build": "webpack && web-ext build -s webextension",
-    "lint-js": "eslint src/ webpack/",
-    "lint-ext": "webpack && web-ext lint -s webextension",
-    "lint": "npm run lint-js && npm run lint-ext",
+    "lint:js": "eslint src/ webpack/ --ext js,json",
+    "lint:webext": "webpack && web-ext lint -s webextension",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:webext",
     "test": "npm run lint",
     "start": "webpack --hide-modules && web-ext run -s webextension"
   },
@@ -36,5 +43,19 @@
   "bugs": {
     "url": "https://github.com/freaktechnik/css-objectnet/issues"
   },
-  "homepage": "https://github.com/freaktechnik/css-objectnet"
+  "homepage": "https://github.com/freaktechnik/css-objectnet",
+  "browserlist": [
+    "last 1 Firefox versions"
+  ],
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "plugins": [
+      "stylelint-no-unsupported-browser-features"
+    ],
+    "rules": {
+      "indentation": 4,
+      "color-named": "always-where-possible",
+      "plugin/no-unsupported-browser-features": true
+    }
+  }
 }
