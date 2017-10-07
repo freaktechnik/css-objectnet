@@ -44,7 +44,7 @@
     "url": "https://github.com/freaktechnik/css-objectnet/issues"
   },
   "homepage": "https://github.com/freaktechnik/css-objectnet",
-  "browserlist": [
+  "browserslist": [
     "last 1 Firefox versions"
   ],
   "stylelint": {
