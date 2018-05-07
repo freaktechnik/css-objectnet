@@ -19,7 +19,7 @@
     "stylelint-config-standard": "^18.0.0",
     "stylelint-no-unsupported-browser-features": "^3.0.0",
     "web-ext": "^2.2.2",
-    "webpack": "^3.4.1",
+    "webpack": "^4.8.1",
     "webpack-webext-plugin": "github:rpl/webpack-webext-plugin"
   },
   "dependencies": {
