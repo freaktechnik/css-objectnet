@@ -10,7 +10,7 @@
     "@freaktechnik/eslint-config-extension": "^6.0.0",
     "@freaktechnik/eslint-config-webpack": "^6.3.4",
     "css-loader": "^0.28.1",
-    "eslint": "^4.3.0",
+    "eslint": "^5.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "html-webpack-plugin": "^2.30.1",
