@@ -9,7 +9,7 @@
   "devDependencies": {
     "@freaktechnik/eslint-config-extension": "^6.0.0",
     "@freaktechnik/eslint-config-webpack": "^6.3.4",
-    "css-loader": "^0.28.1",
+    "css-loader": "^1.0.0",
     "eslint": "^4.3.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
