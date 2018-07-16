@@ -39,6 +39,10 @@ module.exports = {
                     'file-loader?name=[path][name].[ext]'/*,
                     'transifex-loader'*/
                 ]
+            },
+            {
+                test: /node_modules\/.+\.js$/,
+                loader: 'file-loader?name=vendor/[name].[ext]'
             }
         ]
     },

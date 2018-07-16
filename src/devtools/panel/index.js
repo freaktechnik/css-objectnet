@@ -1,4 +1,4 @@
-import 'file-loader?name=vendor/[name].[ext]!d3/build/d3.min.js';
+import 'd3/build/d3.min.js';
 import './style.css';
 import GraphData from './graph-data';
 
