@@ -19,7 +19,7 @@
     "stylelint-config-standard": "^18.0.0",
     "stylelint-no-unsupported-browser-features": "^3.0.0",
     "web-ext": "^2.7.0",
-    "webpack": "^3.12.0"
+    "webpack": "^4.17.2"
   },
   "dependencies": {
     "d3": "^5.5.0"
